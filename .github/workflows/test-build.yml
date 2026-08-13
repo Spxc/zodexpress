@@ -1,0 +1,34 @@
+name: Reusable Build and Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      node-version:
+        description: "Node.js version"
+        required: false
+        default: "24"
+        type: string
+  workflow_call:
+    inputs:
+      node-version:
+        required: false
+        type: string
+        default: "24"
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run tests
+        uses: ./.github/actions/test
+        with:
+          coverage: true
+
+      - name: Build package
+        uses: ./.github/actions/build
+        with:
+          publish: false
