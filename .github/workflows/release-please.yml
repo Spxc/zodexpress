@@ -1,8 +1,9 @@
 name: 'Generate release PR with release-please'
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - 'main'
 
 permissions:
   contents: write
