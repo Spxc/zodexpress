@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 (2026-08-13)
+
+## What's Changed
+* fix: npm publish remove token by @Spxc in https://github.com/Spxc/zodexpress/pull/15
+
+
+**Full Changelog**: https://github.com/Spxc/zodexpress/compare/zodexpress@v1.0.0...zodexpress@v1.0.1
+
 ## 1.0.0 (2026-08-13)
 
 ## What's Changed
