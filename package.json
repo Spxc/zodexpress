@@ -1,6 +1,6 @@
 {
   "name": "@spxc/zodexpress",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A TypeScript-first framework for building Express applications with Zod schemas.",
   "main": "index.js",
   "scripts": {
