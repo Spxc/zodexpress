@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "rewriteRelativeImportExtensions": true,
+    "erasableSyntaxOnly": false,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@plugin": ["./src/index.ts"],
+      "@example/*": ["./example/*"]
+    },
+  },
+  "include": ["src/**/*", "example/**/*", "vitest.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

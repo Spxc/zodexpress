@@ -1,0 +1,36 @@
+name: Build and publish
+description: "Build and publish the package"
+
+inputs:
+  coverage:
+    description: If the package should generate coverage reports
+    required: false
+    default: "true"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup repo
+      uses: ./.github/actions/setup-repo
+      with:
+        skip-install: "false"
+        init-env-file: "true"
+    - name: Run typecheck
+      run: pnpm typecheck
+
+    - name: Run tests
+      if: ${{ inputs.coverage == 'false' }}
+      run: pnpm test
+
+    - name: Run tests with coverage report
+      if: ${{ inputs.coverage == 'true' }}
+      run: pnpm test
+
+    - name: Generate test report
+      if: ${{ inputs.coverage == 'true' }}
+      uses: dorny/test-reporter@v1
+      with:
+        name: Test Report
+        path: coverage/junit.xml
+        reporter: jest-junit
+        fail-on-error: false

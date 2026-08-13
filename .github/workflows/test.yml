@@ -1,0 +1,18 @@
+name: Run and validate tests
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        uses: ./.github/actions/test
+        with:
+          coverage: true
+
+      - name: Build package
+        uses: ./.github/actions/build
+        with:
+          publish: false

@@ -1,0 +1,31 @@
+name: Build and publish
+description: "Build and publish the package"
+
+inputs:
+  npm-token:
+    description: NPM token for publishing.
+    required: false
+    default: ""
+  publish:
+    description: If the package should be published to npm
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup repo
+      uses: ./.github/actions/setup-repo
+      with:
+        skip-install: "false"
+        init-env-file: "false"
+        registry-url: "https://registry.npmjs.org"
+    
+    - name: Build package
+      run: pnpm build
+
+    - name: Publish package
+      if: ${{ inputs.publish == 'true' }}
+      run: pnpm publish --provenance
+      env:
+        NODE_AUTH_TOKEN: ${{ inputs.npm-token }}
