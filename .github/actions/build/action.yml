@@ -2,10 +2,6 @@ name: Build and publish
 description: "Build and publish the package"
 
 inputs:
-  npm-token:
-    description: NPM token for publishing.
-    required: false
-    default: ""
   publish:
     description: If the package should be published to npm
     required: false
@@ -28,5 +24,3 @@ runs:
       if: ${{ inputs.publish == 'true' }}
       shell: bash
       run: pnpm publish --access public --provenance --no-git-checks
-      env:
-        NODE_AUTH_TOKEN: ${{ inputs.npm-token }}
