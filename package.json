@@ -1,7 +1,7 @@
 {
   "name": "@spxc/zodexpress",
   "version": "0.0.0",
-  "description": "",
+  "description": "A TypeScript-first framework for building Express applications with Zod schemas.",
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch example/app.ts",
@@ -14,7 +14,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "express",
+    "zod",
+    "validation",
+    "api",
+    "framework"
+  ],
   "author": "Stian Wiik Instebø",
   "license": "ISC",
   "packageManager": "pnpm@10.7.1",
