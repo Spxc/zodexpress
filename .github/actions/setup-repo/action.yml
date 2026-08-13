@@ -2,10 +2,6 @@ name: Setup repo
 description: "Install node, pnpm and dependencies"
 
 inputs:
-  init-env-file:
-    description: Init env file. Boolean string
-    required: false
-    default: "true"
   skip-install:
     description: Skip dependency install step. Boolean string
     required: false
@@ -29,11 +25,9 @@ runs:
       with:
         node-version-file: ".nvmrc"
         cache: ${{ inputs.cache }}
-        cache-dependency-path: ${{ inputs.working-directory }}/pnpm-lock.yaml
         registry-url: ${{ inputs.registry-url }}
 
     - name: Install dependencies
       if: ${{ inputs.skip-install != 'true' }}
       run: pnpm install --frozen-lockfile
       shell: bash
-      working-directory: ${{ inputs.working-directory }}

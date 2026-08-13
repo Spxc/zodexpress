@@ -4,7 +4,10 @@ export default defineConfig({
   test: {
     reporters: ["default", "junit"],
     outputFile: {
-      junit: "./coverage/junit.xml",
+      junit: "./test-results/junit.xml",
+    },
+    coverage: {
+      reporter: ["text", "html", "clover"],
     },
   },
 });

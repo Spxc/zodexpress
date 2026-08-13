@@ -18,7 +18,6 @@ runs:
       uses: ./.github/actions/setup-repo
       with:
         skip-install: "false"
-        init-env-file: "false"
         registry-url: "https://registry.npmjs.org"
     
     - name: Build package

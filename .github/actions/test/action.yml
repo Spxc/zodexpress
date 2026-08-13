@@ -14,7 +14,6 @@ runs:
       uses: ./.github/actions/setup-repo
       with:
         skip-install: "false"
-        init-env-file: "true"
     - name: Run typecheck
       shell: bash
       run: pnpm typecheck
@@ -28,13 +27,13 @@ runs:
     - name: Run tests with coverage report
       if: ${{ inputs.coverage == 'true' }}
       shell: bash
-      run: pnpm test
+      run: pnpm test:coverage
 
     - name: Generate test report
       if: ${{ inputs.coverage == 'true' }}
       uses: dorny/test-reporter@v1
       with:
         name: Test Report
-        path: coverage/junit.xml
-        reporter: jest-junit
+        path: test-results/junit.xml
+        reporter: java-junit
         fail-on-error: false
