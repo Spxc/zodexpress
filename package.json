@@ -1,5 +1,9 @@
 {
   "name": "@spxc/zodexpress",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Spxc/zodexpress"
+  },
   "version": "1.0.0",
   "description": "A TypeScript-first framework for building Express applications with Zod schemas.",
   "main": "index.js",
