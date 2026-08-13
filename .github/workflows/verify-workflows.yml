@@ -1,19 +1,24 @@
-name: Reusable Build and Test
+name: Verify workflows
 
 on:
   workflow_dispatch:
     inputs:
-      node-version:
-        description: "Node.js version"
-        required: false
-        default: "24"
-        type: string
+      action:
+        description: "Action to run"
+        required: true
+        type: choice
+        default: both
+        options:
+          - test
+          - build
+          - both
+
   workflow_call:
     inputs:
-      node-version:
+      action:
         required: false
         type: string
-        default: "24"
+        default: both
 
 permissions:
   contents: read
@@ -25,12 +30,15 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v7
+
       - name: Run tests
+        if: ${{ inputs.action == 'test' || inputs.action == 'both' }}
         uses: ./.github/actions/test
         with:
           coverage: true
 
       - name: Build package
+        if: ${{ inputs.action == 'build' || inputs.action == 'both' }}
         uses: ./.github/actions/build
         with:
           publish: false
