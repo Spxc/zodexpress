@@ -22,10 +22,12 @@ runs:
         registry-url: "https://registry.npmjs.org"
     
     - name: Build package
+      shell: bash
       run: pnpm build
 
     - name: Publish package
       if: ${{ inputs.publish == 'true' }}
+      shell: bash
       run: pnpm publish --provenance
       env:
         NODE_AUTH_TOKEN: ${{ inputs.npm-token }}

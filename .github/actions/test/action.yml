@@ -16,14 +16,18 @@ runs:
         skip-install: "false"
         init-env-file: "true"
     - name: Run typecheck
+      shell: bash
       run: pnpm typecheck
+      
 
     - name: Run tests
       if: ${{ inputs.coverage == 'false' }}
+      shell: bash
       run: pnpm test
 
     - name: Run tests with coverage report
       if: ${{ inputs.coverage == 'true' }}
+      shell: bash
       run: pnpm test
 
     - name: Generate test report
