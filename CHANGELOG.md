@@ -1,0 +1,12 @@
+# Changelog
+
+## 1.0.0 (2026-08-13)
+
+## What's Changed
+* fix: renamed and updated test workflow by @Spxc in https://github.com/Spxc/zodexpress/pull/1
+* fix: release please by @Spxc in https://github.com/Spxc/zodexpress/pull/2
+
+## New Contributors
+* @Spxc made their first contribution in https://github.com/Spxc/zodexpress/pull/1
+
+**Full Changelog**: https://github.com/Spxc/zodexpress/commits/zodexpress@v1.0.0
