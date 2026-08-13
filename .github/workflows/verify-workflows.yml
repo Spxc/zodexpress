@@ -24,7 +24,7 @@ permissions:
   contents: read
 
 jobs:
-  build-and-test:
+  verify-workflows:
     runs-on: ubuntu-latest
 
     steps:
