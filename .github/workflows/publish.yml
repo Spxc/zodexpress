@@ -1,7 +1,9 @@
 name: Publish Package to npmjs
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - 'main'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,6 +12,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
+
     steps:
       - name: Check out code
         uses: actions/checkout@v7
