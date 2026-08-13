@@ -27,6 +27,6 @@ runs:
     - name: Publish package
       if: ${{ inputs.publish == 'true' }}
       shell: bash
-      run: pnpm publish --access public --provenance
+      run: pnpm publish --access public --provenance --no-git-checks
       env:
         NODE_AUTH_TOKEN: ${{ inputs.npm-token }}
