@@ -6,6 +6,10 @@ Type-safe, schema-driven routing for Express.
 
 The package is intentionally thin. Express remains the underlying HTTP framework, while Zod schemas define the contract of each route.
 
+| Express | Zod |
+|-------- | --- |
+| `5.2.x` | `4.4.x` |
+
 ## Installation
 
 ```bash
