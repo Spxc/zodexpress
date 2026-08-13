@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v7
+
       - name: Run tests
         uses: ./.github/actions/test
         with:

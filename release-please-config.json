@@ -16,9 +16,8 @@
     { "type": "chore", "section": "🔧 Maintenance", "hidden": true }
   ],
   "packages": {
-    "zodexpress": {
-      "package-name": "zodexpress",
-      "path": "."
+    ".": {
+      "package-name": "zodexpress"
     }
   }
 }
